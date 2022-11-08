@@ -10,9 +10,9 @@ jobs:
     executor: aws-cli/default
     steps:
       - aws-cli/setup:
-          aws-access-key-id: 'AKIAV3YAG2CH6BGLGNEI'
-          aws-secret-access-key: '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'
-          aws-region: 'us-east-1'
+          aws-access-key-id: AWS_ACCESS_KEY
+          aws-secret-access-key: AWS_ACCESS_SECRET
+          aws-region: AWS_REGION_NAME
   build:
     docker:
       # the base image can run most needed actions with orbs
