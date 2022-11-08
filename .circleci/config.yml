@@ -60,6 +60,10 @@ jobs:
             npm run deploy
 
 workflows:
+  aws-cli:
+    jobs:
+      - aws-cli-cred-setup:
+          context: aws
   store-front:
     jobs:
       - build
