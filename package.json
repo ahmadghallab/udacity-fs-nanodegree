@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "frontend:install": "cd store-front/store-front-frontend && npm install -f",
+    "frontend:start": "cd store-front/store-front-frontend && npm run start",
+    "frontend:build": "cd store-front/store-front-frontend && npm run build",
+    "frontend:test": "cd store-front/store-front-frontend && npm run test",
+    "frontend:lint": "cd store-front/store-front-frontend && npm run lint",
+    "frontend:deploy": "cd store-front/store-front-frontend && npm run deploy",
+    "api:install": "cd store-front/store-front-api && npm install .",
+    "api:build": "cd store-front/store-front-api && npm run build",
+    "api:start": "cd store-front/store-front-api && npm run dev",
+    "api:deploy": "cd store-front/store-front-api && npm run deploy",
+    "deploy": "npm run api:deploy && npm run frontend:deploy"
+  }
+}
