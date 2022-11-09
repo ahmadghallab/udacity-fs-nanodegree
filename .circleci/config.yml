@@ -50,6 +50,7 @@ jobs:
     steps:
       - node/install:
           node-version: '14.15'
+      - aws-cli-cred-setup
       - eb/setup
       - aws-cli/setup
       - checkout
@@ -62,8 +63,6 @@ jobs:
 workflows:
   store-front:
     jobs:
-      - aws-cli-cred-setup:
-          context: aws
       - build
       - hold:
           filters:
