@@ -11,6 +11,7 @@ jobs:
       - node/install:
           node-version: '14.15'
       - checkout
+      - eb/setup
       - aws-cli/setup
       - run:
           name: Install Front-End Dependencies
