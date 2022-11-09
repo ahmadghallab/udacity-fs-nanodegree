@@ -4,6 +4,14 @@ orbs:
   aws-cli: circleci/aws-cli@3.1.1
   eb: circleci/aws-elastic-beanstalk@2.0.1
 jobs:
+  aws-cli-cred-setup:
+    executor: aws-cli/default
+    steps:
+      - aws-cli/setup:
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_DEFAULT_REGION
+          aws-profile: AWS_PROFILE
   build:
     docker:
       - image: 'cimg/node:14.15'
@@ -44,6 +52,10 @@ jobs:
             npm run deploy
 
 workflows:
+  aws-cli:
+    jobs:
+      - aws-cli-cred-setup:
+          context: aws
   store-front:
     jobs:
       - build
